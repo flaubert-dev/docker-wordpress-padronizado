@@ -1,0 +1,49 @@
+version: '3.3'
+
+services:
+  db:
+    image: 'mariadb:10.5'
+    container_name: 'docker-mariadb'
+    volumes:
+      - 'db_data:/var/lib/mysql'
+    restart: always
+    ports:
+      - '3307:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+  
+  wordpress:
+    depends_on:
+      - db
+    image: 'wordpress:latest'
+    container_name: 'docker-wordpress'
+    ports:
+      - '8000:80'
+    restart: always
+    volumes:
+      - './public/:/var/www/html'
+      - './uploads.ini:/usr/local/etc/php/conf.d/uploads.ini'
+    environment:
+      WORDPRESS_DB_HOST: 'db:3306'
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+  
+  phpmyadmin:
+    depends_on:
+      - db
+    image: 'phpmyadmin:5.0'
+    container_name: 'docker-phpmyadmin'
+    ports:
+      - '10777:80'
+    restart: always
+    environment:
+      PMA_HOST: 'db:3306'
+      PMA_USER: wordpress
+      PMA_PASSWORD: wordpress
+          
+volumes:
+  db_data: {}

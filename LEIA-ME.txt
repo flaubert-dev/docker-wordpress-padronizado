@@ -1,0 +1,27 @@
+Criado por Flaubert Henriques
+
+  GitHub: https://github.com/Dev-Flaubert-Wordpress
+  Linkedin: https://www.linkedin.com/in/flaubert-dev/
+ 
+Informações importantes
+ 
+  (1) 
+    Necessário ter o Docker instalado
+  
+  (2) 
+    Necessário ter o Docker Compose instalado
+  
+  (3) 
+    Necessário colocar os arquivos: uploads.ini & docker-compose.yml na pasta raiz 
+    do projeto e rodar o comando abaixo na pasta raiz: 
+      docker-compose up -d
+
+Observação
+  
+  Após rodar o comando acima terá que aguardar baixar as imagens e todos os containers subirem.       Logo depois, poderá acessar o WordPress em: localhost:8000
+
+Dúvidas
+
+  Entre em contato via 
+    GitHub: https://github.com/Dev-Flaubert-Wordpress
+    Linkedin: https://www.linkedin.com/in/flaubert-dev/

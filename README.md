@@ -18,7 +18,7 @@ Após a instalação do WordPress, poderá acessar o phpMyAdmin na porta 10777:
 - **127.0.0.1:10777** ou **localhost:10777**
 
 Para subir, descer e reiniciar os containers: 
-- Subir os containers: `docker-compose down`
+- Subir os containers: `docker-compose up -d`
 - Reiniciar os containers: `docker-compose down && docker-compose up -d`
 - Descer os containers: `docker-compose down`
 

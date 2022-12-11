@@ -1,29 +1,57 @@
-# Docker Compose com WordPress, MariaDB e phpMyAdmin
-Docker Compose para Desenvolvedores(as) WordPress. 
-Este repositório visa facilitar / agilizar na criação do ambiente de desenvolvimento com WordPress utilizando o Docker e o Docker Compose. 
-Com apenas um comando simples, você criará todo um ambiente de desenvolvimento baseado em WordPress e com a possibilidade de fazer o upload dos Temas, Plugins e Imagens até **256mb** sem precisar mexer no **.htaccess** ou no **php.ini**
+# Docker Compose para Desenvolvedores(as) WordPress
+Este repositório visa facilitar (agilizar) na criação do ambiente de desenvolvimento com WordPress utilizando o Docker e o Docker Compose.
 
-## Mini Tutorial (Informações Importantes)
-- Necessário ter o **Docker** instalado na sua máquina.
-- Necessário ter o **Docker Compose** instalado na sua máquina.
-- Necessário colocar os arquivos: **uploads.ini** & **docker-compose.yml** na pasta raiz do seu projeto.
-- Na pasta raiz do seu projeto, executar o comando: `docker-compose up -d`
-- Logo depois, aguarde as imagens do **WordPress**, **MariaDB** e **phpMyAdmin** serem baixadas.
-- Por fim, aguarde os containers subirem.
+## (!) Importante
+1. Necessário ter o **Docker** instalado na sua máquina.
+2. Necessário ter o **Docker Compose** instalado na sua máquina.
+3. Necessário colocar os arquivos: **uploads.ini** & **docker-compose.yml** na pasta raiz (root) do seu projeto.
+4. Na pasta raiz (root) do seu projeto, executar o comando: 
+```shell
+docker-compose up -d 
+```
+5. Logo depois, aguarde as imagens do **WordPress**, **MariaDB** e **phpMyAdmin** serem baixadas.
+6. Por fim, aguarde os containers subirem.
 
-Após a subida dos containers, poderá iniciar a instalação do WordPress na porta **8000**:
+## Após a subida dos containers
+
+Para iniciar a instalação do WordPress acesse a porta *8000*:
+
 - **127.0.0.1:8000** ou **localhost:8000**
 
-Após a instalação do WordPress, poderá acessar o phpMyAdmin na porta **10777**:
+## Após a instalação do WordPress
+
+Poderá acessar o phpMyAdmin na porta *10777*:
+
 - **127.0.0.1:10777** ou **localhost:10777**
 
-Para subir, descer e reiniciar os containers: 
-- Subir os containers: `docker-compose up -d`
-- Reiniciar os containers: `docker-compose down && docker-compose up -d`
-- Descer os containers: `docker-compose down`
+## Subir, reiniciar ou descer os containers
 
-Para conferir as portas e o nome de cada container, poderá utilizar o comando `docker ps`. Caso tenha alguma sugestão ou dificuldade entre em contato comigo via:
+1. Subir os containers:
+```shell
+docker-compose up -d
+```
+2. Reiniciar os containers:
+```shell
+docker-compose down && docker-compose up -d
+```
+3. Descer os containers:
+```shell
+docker-compose down
+```
+
+## Conferir as portas e o nome de cada container
+
+Poderá utilizar o comando:
+
+```shell
+docker ps
+```
+
+## Dicas e Sugestões
+
+Caso tenha alguma dica ou sugestão entre em contato:
+
 - Issues: https://github.com/Dev-Flaubert-Wordpress/docker-wordpress-padronizado/issues
 - Linkedin: https://www.linkedin.com/in/flaubert-dev/
 
-Que este simples repositório possa lhe ajudar de alguma forma em algum momento da sua carreira como Desenvolvedor(a).
+Que este simples repositório possa lhe ajudar de alguma forma na sua carreira como Desenvolvedor(a).

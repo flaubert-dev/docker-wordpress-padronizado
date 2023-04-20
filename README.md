@@ -11,7 +11,7 @@ Este repositório tem o objetivo de facilitar / agilizar na criação do ambient
 > 4. Na pasta raiz (root) do seu projeto, executar o comando abaixo:
 
 ```shell
-docker-compose up -d 
+sudo docker-compose up -d 
 ```
 
 > 5. Logo depois, aguarde as imagens do **WordPress**, **MariaDB** e **phpMyAdmin** serem baixadas.
@@ -31,15 +31,15 @@ docker-compose up -d
 
 > 1. Subir os containers:
 ```shell
-docker-compose up -d
+sudo docker-compose up -d
 ```
 > 2. Reiniciar os containers:
 ```shell
-docker-compose down && docker-compose up -d
+sudo docker-compose down && docker-compose up -d
 ```
 > 3. Descer os containers:
 ```shell
-docker-compose down
+sudo docker-compose down
 ```
 
 ## Conferir as portas e o nome de cada container
@@ -47,7 +47,7 @@ docker-compose down
 > Poderá utilizar o comando abaixo:
 
 ```shell
-docker ps
+sudo docker ps
 ```
 
 ## Dicas e Sugestões

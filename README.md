@@ -35,7 +35,7 @@ sudo docker-compose up -d
 ```
 > 2. Reiniciar os containers:
 ```shell
-sudo docker-compose down && docker-compose up -d
+sudo docker-compose down && sudo docker-compose up -d
 ```
 > 3. Descer os containers:
 ```shell

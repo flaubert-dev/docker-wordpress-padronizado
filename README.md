@@ -1,6 +1,6 @@
 # Docker Compose p/ Devs WP
 
-Este repositório tem o objetivo de facilitar / agilizar na criação do ambiente de desenvolvimento<br/> com WordPress utilizando o Docker e o Docker Compose.
+Este repositório tem o objetivo de facilitar / agilizar na criação do ambiente de desenvolvimento com WordPress utilizando o Docker e o Docker Compose. Se for utilizar o [Sage 10](https://github.com/roots/sage/tree/v10.7.0), altere o arquivo docker-compose.yml na linha 21 `image: 'wordpress:latest'` para `image: 'wordpress:php8.1'`.
 <br/>
 
 ## (!) Importante

@@ -1,6 +1,6 @@
 # Docker Compose p/ Devs WP
 
-Este repositório tem o objetivo de facilitar / agilizar na criação do ambiente de desenvolvimento com WordPress utilizando o Docker e o Docker Compose. Se for utilizar o [Sage 10](https://github.com/roots/sage/tree/v10.7.0), altere o arquivo docker-compose.yml na linha 21 `image: 'wordpress:latest'` para `image: 'wordpress:php8.1'`.
+Este repositório tem o objetivo de facilitar / agilizar / ajudar na criação do ambiente de desenvolvimento com wordpress + wp cli + mariadb + phpmyadmin utilizando o docker e o docker compose.
 <br/>
 
 ## (!) Importante
@@ -14,30 +14,34 @@ Este repositório tem o objetivo de facilitar / agilizar na criação do ambient
 sudo docker-compose up -d 
 ```
 
-> 5. Logo depois, aguarde as imagens do **WordPress**, **MariaDB** e **phpMyAdmin** serem baixadas.
-> 6. Por fim, aguarde os containers subirem.
+> 5. Logo depois, aguarde as imagens do **MariaDB**, **WordPress**, **WP CLI** e **phpMyAdmin** serem baixadas. Por fim, aguarde os containers subirem.
 
 ## Após a subida dos containers
 
 > Para iniciar a instalação do WordPress acesse a porta `8000`, exemplo abaixo:<br/>
-> `127.0.0.1:8000` ou `localhost:8000`
+> `localhost:8000` ou `127.0.0.1:8000` 
 
 ## Após a instalação do WordPress
 
 > Poderá acessar o phpMyAdmin na porta *10777*, exemplo abaixo:<br/>
-> `127.0.0.1:10777` ou `localhost:10777`
+> `localhost:10777` ou `127.0.0.1:10777`
 
 ## Subir, reiniciar ou descer os containers
 
 > 1. Subir os containers:
+
 ```shell
 sudo docker-compose up -d
 ```
+
 > 2. Reiniciar os containers:
+
 ```shell
 sudo docker-compose down && sudo docker-compose up -d
 ```
+
 > 3. Descer os containers:
+
 ```shell
 sudo docker-compose down
 ```

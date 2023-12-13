@@ -5,7 +5,7 @@ services:
     image: 'mariadb:10.5'
     container_name: 'docker-mariadb'
     volumes:
-      - 'db_data:/var/lib/mysql'
+      - './db_data:/var/lib/mysql'
     restart: always
     ports:
       - '3307:3306'
@@ -18,19 +18,35 @@ services:
   wordpress:
     depends_on:
       - db
-    image: 'wordpress:latest'
+    image: 'wordpress:php8.1'
     container_name: 'docker-wordpress'
     ports:
       - '8000:80'
     restart: always
-    volumes:
-      - './public/:/var/www/html'
-      - './uploads.ini:/usr/local/etc/php/conf.d/uploads.ini'
     environment:
       WORDPRESS_DB_HOST: 'db:3306'
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - './public/:/var/www/html'
+      - './uploads.ini:/usr/local/etc/php/conf.d/uploads.ini'
+  
+  wpcli:
+    depends_on:
+      - db
+      - wordpress
+    image: 'wordpress:cli'
+    container_name: 'docker-wpcli'
+    entrypoint: wp
+    environment:
+      WORDPRESS_DB_HOST: 'db:3306'
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - './public/:/var/www/html'
+      - './uploads.ini:/usr/local/etc/php/conf.d/uploads.ini'
   
   phpmyadmin:
     depends_on:
